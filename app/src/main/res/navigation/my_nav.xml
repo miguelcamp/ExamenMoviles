@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/bookListFragment">
+
+    <fragment
+        android:id="@+id/bookListFragment"
+        android:name="edu.bo.ucb.librosapp.fragments.BookListFragment"
+        android:label="Book List"
+        tools:layout="@layout/book_list_fragment" >
+        <action
+            android:id="@+id/action_bookListFragment_to_addBookFragment"
+            app:destination="@id/addBookFragment" />
+        <action
+            android:id="@+id/action_bookListFragment_to_updateBookFragment"
+            app:destination="@id/updateBookFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="edu.bo.ucb.librosapp.fragments.AddBookFragment"
+        android:label="Add Book"
+        tools:layout="@layout/fragment_add_book" >
+        <action
+            android:id="@+id/action_addBookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateBookFragment"
+        android:name="edu.bo.ucb.librosapp.fragments.UpdateBookFragment"
+        android:label="Edit Book"
+        tools:layout="@layout/fragment_update_book" >
+        <action
+            android:id="@+id/action_updateBookFragment_to_bookListFragment"
+            app:destination="@id/bookListFragment" />
+        <argument
+            android:name="currentBook"
+            app:argType="edu.bo.ucb.librosapp.model.Book" />
+
+    </fragment>
+</navigation>

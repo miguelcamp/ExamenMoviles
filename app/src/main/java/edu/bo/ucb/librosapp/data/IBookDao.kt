@@ -21,4 +21,7 @@ interface IBookDao {
 
     @Query( "SELECT * FROM book_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Book>>
+
+    @Delete
+    fun deleteById(book: Book)
 }

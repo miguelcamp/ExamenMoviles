@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddBookFragment">
+    tools:context=".fragments.AddBookFragment">
 
     <TextView
         android:id="@+id/Header"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/DescriptionTextField" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addBook_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
