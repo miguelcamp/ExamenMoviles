@@ -1,5 +1,6 @@
 package edu.bo.ucb.librosapp.data
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import edu.bo.ucb.librosapp.model.Book
 
@@ -17,4 +18,7 @@ interface IBookDao {
 
     @Update
     suspend fun updateBook(book: Book)
+
+    @Query( "SELECT * FROM book_table ORDER BY id ASC")
+    fun readAllData(): LiveData<List<Book>>
 }
