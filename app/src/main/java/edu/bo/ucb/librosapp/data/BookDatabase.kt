@@ -20,7 +20,11 @@ abstract class BookDatabase: RoomDatabase() {
             }
 
             synchronized(this) {
-                val instance = Room.databaseBuilder(context.applicationContext, BookDatabase::class.java, "db_name").build()
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    BookDatabase::class.java,
+                    "db_name"
+                ).build()
                 INSTANCE = instance
                 return instance
             }
